@@ -4,13 +4,13 @@ import Error from './componentes/general/Error/Error'
 import Registro from './componentes/Registro/Registro'
 import Login from './componentes/Login/Login'
 import DashboardContainer from './componentes/Dashboard/DashboardContainer'
-
+import Home from './componentes/general/Home/Home'
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <p>holaaaa</p>
+          <Home />
         </Route>
         <Route exact path="/registro">
           <Registro />
@@ -19,7 +19,7 @@ function App() {
           <Login />
         </Route>
         <Route exact path="/dashboard">
-          <DashboardContainer/>
+          <DashboardContainer />
         </Route>
         <Route path="*">
           <Error />
