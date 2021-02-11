@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 const Login = () => {
 
     const history = useHistory();
-    const [msjError, setMsjError] = useState(false)
+    const [msjErrorLog, setMsjErrorLog] = useState(false)
     const uLogin = useRef(null)
     const contLogin = useRef(null)
 
@@ -45,7 +45,7 @@ const Login = () => {
             
             history.push('/dashboard');
         } else {
-            setMsjError(true)
+            setMsjErrorLog(true)
         }
     }
 
@@ -57,10 +57,8 @@ const Login = () => {
                     <input type="text" className="registro-input" ref={uLogin} placeholder="Usuario" required />
                     <input type="text" className="registro-input" ref={contLogin} placeholder="Contraseña" required />
                     <input type="submit" className="btn-registro-login" value="login" />
-                    
-                    {msjError ? <p className="msjError">Hubo un problema al iniciar sesion, intente mas tarde</p> : null}
-
                 </form>
+                {msjErrorLog ? <p className="msjError">Hubo un problema al iniciar sesion, intente mas tarde</p> : null}
             </div>
         </div>
     )
