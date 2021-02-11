@@ -2,7 +2,10 @@ import './DashboardContainer.css'
 
 const DashboardContainer = () => {
     return (
-        <h1 className="dashboard-title">Dashboard</h1>
+        <div className = "dashContainer">
+            <h1 className="dashboard-title">Dashboard</h1>
+        </div>
+        
     )
 }
 

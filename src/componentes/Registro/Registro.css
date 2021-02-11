@@ -39,9 +39,16 @@
     padding-left: 7px;
 }
 
-::placeholder:focus{
+.registro-input:focus{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    color: purple;
+    color: white;
+    padding-left: 7px;
+}
+
+.registro-input:focus::after{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
     padding-left: 7px;
 }

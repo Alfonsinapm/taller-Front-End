@@ -28,3 +28,7 @@
     border: solid 1px white;
     font-weight: bold;
 }
+
+.msjError{
+    padding: 20px;
+}
