@@ -5,9 +5,13 @@ import Registro from './componentes/Registro/Registro'
 import Login from './componentes/Login/Login'
 import DashboardContainer from './componentes/Dashboard/DashboardContainer'
 import Home from './componentes/general/Home/Home'
+import Header from './componentes/general/Header/Header'
+import Footer from "./componentes/general/Footer/Footer";
+
 function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -25,6 +29,7 @@ function App() {
           <Error />
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }

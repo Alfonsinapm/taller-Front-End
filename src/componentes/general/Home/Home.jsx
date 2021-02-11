@@ -1,24 +1,25 @@
 import './Home.css'
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Home = () => {
     const history = useHistory();
-    
-    
-    const handlePushRegistro =()=>{
+
+
+    const handlePushRegistro = () => {
         history.push('/registro');
     }
-    const handlePushLogin =()=>{
+    const handlePushLogin = () => {
         history.push('/login');
     }
-    
-    return (
-        <>
-        <h1 className="Home-title">Inicio</h1>
 
-        <input type="button" onClick={handlePushRegistro} value="registro"/>
-        <input type="button" onClick={handlePushLogin} value="login"/>
-        </>
+    return (
+        <div className="home">
+            <h1 className="Home-title">Inicio</h1>
+            <div className="home-container">
+                <input type="button" className="home-button" onClick={handlePushRegistro} value="registro" />
+                <input type="button" className="home-button" onClick={handlePushLogin} value="login" />
+            </div>
+        </div>
     )
 }
 
