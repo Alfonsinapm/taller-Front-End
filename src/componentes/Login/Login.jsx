@@ -2,17 +2,20 @@ import './Login.css'
 import { useRef, useState } from 'react'
 import React from 'react'
 import { useHistory } from 'react-router-dom';
-
+import {useSelector,useDispatch} from 'react-redux'
 
 const Login = () => {
-
+    
+    const tokenR = useSelector(state=>state.tRegistro);
     const history = useHistory();
     const [msjErrorLog, setMsjErrorLog] = useState(false)
+    let dispatch = useDispatch()
+    
     const uLogin = useRef(null)
     const contLogin = useRef(null)
-
+    
     const performLogin = (usuI, contraI) => {
-        var myHeaders = new Headers();
+        var myHeaders = new Headers(tokenR);
         var raw = JSON.stringify({
             "username": usuI,
             "password": contraI
@@ -28,6 +31,7 @@ const Login = () => {
             .then(response => response.json())
             .then((result) => {
                 console.log(result)
+                dispatch = ({type: 'agregar-tokenL', payload:result.token})
                 return true
             }
             )
@@ -42,7 +46,6 @@ const Login = () => {
         let usu = uLogin.current.value;
         let contra = contLogin.current.value;
         if (performLogin(usu, contra)) {
-            
             history.push('/dashboard');
         } else {
             setMsjErrorLog(true)

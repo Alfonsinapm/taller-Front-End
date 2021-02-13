@@ -7,9 +7,16 @@ import DashboardContainer from './componentes/Dashboard/DashboardContainer'
 import Home from './componentes/general/Home/Home'
 import Header from './componentes/general/Header/Header'
 import Footer from "./componentes/general/Footer/Footer";
+import reducer from './reducer'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+
+const store = createStore(reducer)
 
 function App() {
+  
   return (
+    <Provider store={store}>
     <BrowserRouter>
     <Header/>
       <Switch>
@@ -31,6 +38,7 @@ function App() {
       </Switch>
       <Footer/>
     </BrowserRouter>
+    </Provider>
   );
 }
 

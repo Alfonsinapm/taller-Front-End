@@ -31,4 +31,7 @@
 
 .msjError{
     padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
 }
