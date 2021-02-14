@@ -42,7 +42,7 @@ const Login = () => {
     }
 
     const handleLogin = (e) => {
-        e.preventDefault();
+       /* e.preventDefault();*/
         let usu = uLogin.current.value;
         let contra = contLogin.current.value;
         if (performLogin(usu, contra)) {

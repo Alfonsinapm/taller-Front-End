@@ -30,15 +30,19 @@ const Registro = () => {
 
     const performRegistro = (usuIng, contraIng, alturaIng) => {
 
-        let raw = JSON.stringify({
-            "username": usuIng,
-            "password": contraIng,
-            "height": alturaIng
-        });
+        // let raw = JSON.stringify({
+        //     "username": usuIng,
+        //     "password": contraIng,
+        //     "height": alturaIng
+        // });
 
         let requestOptions = {
             method: 'POST',
-            body: raw,
+            body: JSON.stringify({
+                "username": usuIng,
+                "password": contraIng,
+                "height": alturaIng
+            }),
             redirect: 'follow'
         };
 

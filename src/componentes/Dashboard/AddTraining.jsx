@@ -1,31 +1,15 @@
-import React from 'react'
-
+import './DashboardContainer.css'
+import {useSelector} from 'react-redux'
 const AddTraining = () => {
+    const canti = useSelector(state=>state.cantidad);
     return (
-        <div className="contenido">
+        
             <div className="agregar">
-                <label for="txtAgregar">Agregar:</label>
-                <input type="text" name="txtAgregar" id="txtAgregar" />
-                <input type="number" name="peso" id="nPeso" />
-                <input type="button" value="Agregar" />
+                <label className="lblAgregar" htmlFor="txtAgregar">Agregar:</label>
+                <input type="text" name="txtAgregar" id="txtAgregar" className="minutos" placeholder="Minutos" />
+                <input type="button" value="Agregar" className="btnAgregar" />
+            <p>{canti}</p>
             </div>
-            <div className="tarjetas">
-                <div className="tarjeta">
-                    <input type="checkbox" id="list01" class="checkbox" />
-                    <label className="checkLabel" for="list01">Velocidad</label>
-                </div>
-
-                <div className="tarjeta">
-                    <input type="checkbox" id="list02" class="checkbox" />
-                    <label className="checkLabel" for="list02">Resistencia</label>
-                </div>
-
-                <div className="tarjeta">
-                    <input type="checkbox" id="list02" class="checkbox" />
-                    <label className="checkLabel" for="list02">Potencia</label>
-                </div>
-            </div>
-        </div>
     )
 }
 
